@@ -1,5 +1,5 @@
 #'@name quadcount
-#'@title Plots a map
+#'@title Sums values of points in space by bins
 #'
 #'@description A function to subdivide a given area of points and sum the values of points in each box. It is necessary to supply a data.frame with columns 
 #'titled'x' and 'y'. Must indicate which column contains the values to sum ('valNum' parameter). Generates a df titled 'pixels'
