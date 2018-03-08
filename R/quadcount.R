@@ -1,7 +1,7 @@
 #'@name quadcount
 #'@title Plots a map
 #'
-#'@description A function to sum the values of points in a given area. It is necessary to supply a data.frame with columns 
+#'@description A function to subdivide a given area of points and sum the values of points in each box. It is necessary to supply a data.frame with columns 
 #'titled'x' and 'y'. Must indicate which column contains the values to sum ('valNum' parameter). Generates a df titled 'pixels'
 #'test.
 #'
@@ -16,11 +16,11 @@
 #'            Setting False will increase plot speed of large areas.
 #'
 #'@return List item 1= list of boxes and pixel counts; List item 2= ggplot of quads and counts
-#'@import tidyverse
+#'
 #'@export
 
 
-
+library(tidyverse)
 
 quadcount<-
   function(df,val,xbreak,ybreak,pixSize=2,pixAlpha=1, pix=T){
@@ -28,15 +28,15 @@ quadcount<-
 
 ## Error message if df$x not found
     
-  if(is.null(df$x) == T){
-    
-    stop(paste('
-               
-               x-coords must be in a column titled "x"'),'
-         
-         ')
-    
-  }
+  # if(is.null(df$x) == T){
+  #   
+  #   stop(paste('
+  #              
+  #              x-coords must be in a column titled "x"'),'
+  #        
+  #        ')
+  #   
+  # }
 
 ## Error message if df$y not found
   if(is.null(df$y) == T){
